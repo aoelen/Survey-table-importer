@@ -1,0 +1,176 @@
+tableID,problem,title,originalTableNumber,reference
+1,Personality Recognition from Online Social Networks,Overview of Various Studies for Personality Recognition from Online Social Networks,1,10.1145/3070645
+4,Participatory Design evaluations,A comparison of multiple participatory design evaluations,2,10.1145/2940299.2940303
+7,In-Vehicle Light Displays,Overview of methods per system used to develop an in-vehicle light display ,1,10.1145/3003715.3005416
+8,Automatic Signature Verification,Overview of offline signature verification systems,"1,2",10.1145/2905055.2905234 
+9,Content Distribution in P2P Networks,The Pros and Cons of the various replication techniques of content distribution in Peer to Peer Networks,1,10.1145/2393216.2393259
+10,Arabic Opinion Mining ,Summary of Arabic Sentiment Lexicons ,1,10.1145/3295662
+11,Fuzzy Service Matching,Aspect-based and Fuzziness-based Classification Approaches in the Context of On-The-Fly Computing ,"1,2",10.1145/2465449.2465454
+13,Software Traceability Approaches ,Review of Traceability Approaches between Software Architecture and Source Code,1,10.1145/2601248.2601278
+14,Web Service  Reliability,Review of the Reliability of Composite Web Service in Service-Oriented Architecture,1,10.1145/2693208.2693237
+16,Blood Glucose Monitoring,Continuous Blood Glucose Monitoring and Suggesting the Quantity of Insulin or Artificial Pancreas (AP) for Diabetic Type 1 Patients overview,2,10.1145/3318299.3318352
+17,Crowdfunding for Extracting Feedback,"Overview for Crowdfunding as Feedback Channel 
+",3,10.1145/3131085.3131125
+18,Model-driven Game Development,Model-driven Game Development approaches ,1,10.1145/3365000
+20,Agile Usage,Overview of Empirical Studies on Agile Usage,1,10.1145/2460999.2461016
+21,Warehouse Picking Systems acceptance,A Literature Review of the Acceptance of Warehouse Picking Systems ,2,10.1145/3084381.3084409
+22,Data Visualization ,Overview of Generic Visualization Systems ,1,"Bikakis, N., & Sellis, T. (2016). Exploration and visualization in the web of big linked data: A survey of the state of the art. arXiv preprint arXiv:1601.08059."
+22.1,Data Visualization ,"Overview of Graph-based Visualization Systems 
+",2,"Bikakis, N., & Sellis, T. (2016). Exploration and visualization in the web of big linked data: A survey of the state of the art. arXiv preprint arXiv:1601.08059."
+23,Utility Sentient Frequent Itemset Mining and Association Rule Mining ,Comparison of Execution times of different Algorithms for mining the frequent itemsets and association rules from large databases ,1,"Shankar, S., & Purusothaman, T. (2009). Utility sentient frequent itemset mining and association rule mining: a literature survey and comparative study. International Journal of Soft Computing Applications, 4(1), 81-95."
+23.1,Utility Sentient Frequent Itemset Mining and Association Rule Mining ,"Comparison of Memory Usage of different Algorithms 
+for mining the frequent itemsets and association rules from large databases ",2,"Shankar, S., & Purusothaman, T. (2009). Utility sentient frequent itemset mining and association rule mining: a literature survey and comparative study. International Journal of Soft Computing Applications, 4(1), 81-95."
+24,Selective Hydrogenation over Supported Metal Catalysts,Catalysts for the Gas-Phase Selective Hydrogenation of Alkynes overview,1,10.1021/acs.chemrev.9b00230
+24.1,Selective Hydrogenation over Supported Metal Catalysts,Catalysts for the Liquid-Phase Hydrogenation of Alkynes overview,2,10.1021/acs.chemrev.9b00230
+25,Lateral flow (immuno)assay,Overview of lateral flow (immuno)assays: detection of infectious agents,1,10.1007/s00216-008-2287-2
+25.1,Lateral flow (immuno)assay,Overview of lateral flow (immuno)assays: detection of metabolic disorders,2,10.1007/s00216-008-2287-2
+25.2,Lateral flow (immuno)assay,Overview of lateral flow (immuno)assays: detection of toxic compounds,3,10.1007/s00216-008-2287-2
+25.3,Lateral flow (immuno)assay,Overview of lateral flow (immuno)assays: miscellaneous applications,4,10.1007/s00216-008-2287-2
+26,Document Structure Analysis Algorithms,Summary of  experiments involving various logical structure analysis algorithms,1,10.1117/12.476326
+26.1,Document Structure Analysis Algorithms,Analysis of state-of-the-art document logical structure analysis algorithms,2,10.1117/12.476326
+27,Adhesively bonded joints,Summary of both linear and nonlinear two-dimensional analytical models available in the literature,1,10.1016/j.ijadhadh.2008.06.005
+28,Factors influencing human comfort,Summary of studies investigating the importance of environmental conditions on overall satisfaction with IEQ.,1,10.1016/j.buildenv.2010.10.021
+28.1,Factors influencing human comfort,Summary of studies examining the effects of individual characteristics of building occupants on satisfaction with IEQ.,2,10.1016/j.buildenv.2010.10.021
+29,Informal sector ,Overview of informal sector in studies of developed countries ,2,10.1023/B:PUCH.0000044287.88147.5e
+29.1,Informal sector ,Overview of informal sector in studies of less developed countries ,3,10.1023/B:PUCH.0000044287.88147.5e
+30,Combined inventory management,Characteristics of central papers with instant time horizon.,3,10.1016/j.cor.2009.11.009
+30.1,Combined inventory management,Characteristics of central papers with finite time horizon.,4,10.1016/j.cor.2009.11.009
+30.2,Combined inventory management,Characteristics of central papers with infinite planning horizon.,5,10.1016/j.cor.2009.11.009
+30.3,Combined inventory management,Routing and inventory management aspects of industrial cases.,6,10.1016/j.cor.2009.11.009
+31,Chitosan and its antimicrobial potential,Examples of identified chitosanases.,1,10.1111/j.1751-7915.2008.00080.x
+31.1,Chitosan and its antimicrobial potential,Overview of Applications of chitosan.,2,10.1111/j.1751-7915.2008.00080.x
+32,Sensor networks clustering,Comparison of the first attempts clustering approaches,2,10.1016/j.jnca.2014.09.005
+32.1,Sensor networks clustering,Comparison of LEACH-based clustering protocols,3,10.1016/j.jnca.2014.09.005
+32.2,Sensor networks clustering,Comparison of equal-sized clustering algorithms,4,10.1016/j.jnca.2014.09.005
+32.3,Sensor networks clustering,Comparison of unequal-sized clustering protocols,5,10.1016/j.jnca.2014.09.005
+33,Fleet composition and routing,Papers on the standard fleet size and mix vehicle routing problem.,2,10.1016/j.cor.2010.03.015
+33.1,Fleet composition and routing,Papers on the heterogeneous fixed fleet vehicle routing problem.,3,10.1016/j.cor.2010.03.015
+33.2,Fleet composition and routing,Papers on fleet composition and routing problems with time windows. ,4,10.1016/j.cor.2010.03.015
+33.3,Fleet composition and routing,Papers on fleet composition and routing problems with multiple depots.,5,10.1016/j.cor.2010.03.015
+33.4,Fleet composition and routing,Papers that focus on road-based applications.,6,10.1016/j.cor.2010.03.015
+33.5,Fleet composition and routing,Papers that focus on maritime applications.,7,10.1016/j.cor.2010.03.015
+34,Smart cities,Overview of taxonomy of smart city definitions,1,10.1007/s11432-015-5397-4
+35,Immobilization of Enzymes,Covalent coupling methods of enzymes: activation of matrix hydroxyl functions,6,10.1007/978-1-62703-550-7_2
+35.1,Immobilization of Enzymes,Covalent coupling methods of enzymes: modification of the polymer backbone to produce an activated group,7,10.1007/978-1-62703-550-7_2
+36,Exchange rate volatility,Overview of Exchange Rate Volatility and Trade ,1,"Ozturk, I. (2006). Exchange rate volatility and trade: A literature survey. International Journal of Applied Econometrics and Quantitative Studies, 3(1)."
+37,Robotics Middleware,Comparisons of the attributes of the main robotics middleware.,2,10.1155/2012/959013
+38,University entrepreneurship categories,Overview of the Elements of an entrepreneurial university ,2,10.1007/s11365-007-0072-x
+39,Residual stresses during fatigue ,Summary on cyclic relaxation of peening residual stress in steels,1,10.1111/j.1460-2695.2007.01102.x
+40,Power systems,A short summary of time domain performance.,A1,10.1016/j.rser.2013.04.029
+40.1,Power systems,A short summary of time domain performance.,A1,10.1016/j.rser.2013.04.029
+40.2,Power systems,A short summary of time domain performance.,A1,10.1016/j.rser.2013.04.029
+40.3,Power systems,A short summary of time domain performance.,A1,10.1016/j.rser.2013.04.029
+41,Refrigerant Evaporators,Heat transfer and pressure drop correlations,1,10.1080/01457630304056
+42,Workforce Age and Innovation,How existing firm-level studies cope with methodological challenges,1,10.1111/j.1468-2370.2011.00298.x
+43,Energy-economic growth ,Summary of empirical studies on energy consumption-growth nexus.,1,10.1016/j.rser.2014.07.084
+43.1,Energy-economic growth ,Summary of empirical studies on electricity-growth nexus.,2,10.1016/j.rser.2014.07.084
+43.2,Energy-economic growth ,Summary of empirical studies on nuclear-growth nexus.,3,10.1016/j.rser.2014.07.084
+43.3,Energy-economic growth ,Summary of empirical studies on renewable-growth nexus.,4,10.1016/j.rser.2014.07.084
+44,Educational Games ,Overview of papers accessing the result of educational games,1,10.1109/VS-GAMES.2013.6624226
+45,Stereo Vision Disparity Map Algorithms,Summary of stereo vision disparity map algorithms implemented on different computational platforms,2,10.1155/2016/8742920 
+46,Epidemiology and pathology of gangliocytic paraganglioma,Duodenal gangliocytic paraganglioma with lymph node metastasis,1,10.1186/1471-2407-11-187
+47,Network optimization,Summary of literature on container routing in a single period,3,10.1007/s10696-013-9179-2
+47.1,Network optimization,Summary of literature on container routing in multiple periods,4,10.1007/s10696-013-9179-2
+47.2,Network optimization,Summary of literature on fleet management,5,10.1007/s10696-013-9179-2
+47.3,Network optimization,Summary of literature on optimal single route,6,10.1007/s10696-013-9179-2
+47.4,Network optimization,A summary of literature on optimal multiple routes,7,10.1007/s10696-013-9179-2
+47.5,Network optimization,Summary of literature on hub and spoke economics and hub port selection,8,10.1007/s10696-013-9179-2
+47.6,Network optimization,Summary of literature on hub and spoke network,9,10.1007/s10696-013-9179-2
+48,Power Cycle Testing,"Comparison of power cycling tests based on operating conditions, time to failure, and circuit",3,10.1109/TPEL.2014.2359015
+49,Embryonal sarcoma of the liver,Clinical features of undifferentiated embryonal liver sarcoma and treatment results,1,10.1007/s00534-007-1265-y
+49.1,Embryonal sarcoma of the liver,Radiologic and histologic findings of undifferentiated embryonal liver sarcoma,2,10.1007/s00534-007-1265-y
+50,Search-Based Software Engineering ,Overview of Pareto-Optimal Search-Based Software Engineering approaches,1,10.1109/RAISE.2013.6615200
+51,Automated wafer-transport systems,Summary of research comparing overhead hoist transport versus continuous flow transport systems,2,10.1080/09537280600900774
+51.1,Automated wafer-transport systems,Summary of research comparing segregated through stocker systems versus unified transport systems.,3,10.1080/09537280600900774
+51.2,Automated wafer-transport systems,Summary of automated material handling systems  control strategies,4,10.1080/09537280600900774
+52,Software Project Risks ,Factors affecting software project risks,XIII,"Arnuphaptrairong, T. (2011, March). Top ten lists of software project risks: Evidence from the literature survey. In Proceedings of the International MultiConference of Engineers and Computer Scientists (Vol. 1, pp. 1-6)."
+53,Facial Landmark Detection,CNN model structures of the leading methods,2,10.1007/s11263-018-1097-z
+53.1,Facial Landmark Detection,Summary of the databases for facial detection,3,10.1007/s11263-018-1097-z
+53.2,Facial Landmark Detection,Accuracy comparison of leading algorithms for facial detection,4,10.1007/s11263-018-1097-z
+53.3,Facial Landmark Detection,Efficiency comparison of leading algorithms for facial detection,5,10.1007/s11263-018-1097-z
+53.4,Facial Landmark Detection,Summary of the academic software for facial detection,6,10.1007/s11263-018-1097-z
+54,Enterprise resource planning,Aggregate summary of overall literature review ,3,10.1108/BPMJ-12-2014-0122
+54.1,Enterprise resource planning,Aggregate summary of assorted literature reviews,4,10.1108/BPMJ-12-2014-0122
+54.2,Enterprise resource planning,Aggregate summary of prior literature reviews on CSFs of ERP,5,10.1108/BPMJ-12-2014-0122
+54.3,Enterprise resource planning,Aggregate summary of prior literature reviews on ERP in SMEs,6,10.1108/BPMJ-12-2014-0122
+54.4,Enterprise resource planning,Aggregate summary of literature reviews on ERP in fields approach,7,10.1108/BPMJ-12-2014-0122
+54.5,Enterprise resource planning,Aggregate summary of prior literature reviews on operating themes of ERP,8,10.1108/BPMJ-12-2014-0122
+54.6,Enterprise resource planning,Aggregate summary of literature reviews on type of ERP,9,10.1108/BPMJ-12-2014-0122
+55,CO2 emissions,Evidence of EKC estimation studies for CO2 emissions,1,10.1108/JES-09-2017-0249
+56,Physical activity coaching systems,"Overview of system for tailoring real-time physical activity coaching systems 
+",6,10.1007/s11257-014-9146-y
+57,Energy usage for electric loads ,Methodologies and key findings of work in energy audits in buildings.,3,10.1016/j.rser.2014.03.037
+58,Social Engineering Attacks,Analysis of social engineering attack detection techniques,None,10.1109/CCAA.2016.7813778
+59,Security Challenges in Vehicle Ad-hoc Networks ,Analysis of Security Challenges in Vehicle Ad-hoc Networks ,"1,2,3","Dak, A. Y., Yahya, S., & Kassim, M. (2012). A literature survey on security challenges in VANETs. International Journal of Computer Theory and Engineering, 4(6), 1007."
+60,Eye localization,Lists of eye localization performance evaluated on various face databases.,3,10.1016/j.patcog.2013.05.009
+61,Oral dental erosion,Used dental erosion indexes in human cross-sectional studies for children found in Medline from the years 2000–2006,1,10.1007/s00784-007-0178-0
+61.1,Oral dental erosion,"Used dental erosion indexes in human cross-sectional studies for adults found in Medline from the years 2000–2006 
+",2,10.1007/s00784-007-0178-0
+62,Disaster management,Publications classified according to disaster phase and type.,1,10.1016/j.sorms.2016.11.002
+62.1,Disaster management,Objective functions and decisions for first- and second-stage in the pre-disaster phase.,2,10.1016/j.sorms.2016.11.002
+62.1,Disaster management,Objective functions and decisions for first- and second-stage in the pre-disaster phase.,2,10.1016/j.sorms.2016.11.002
+62.3,Disaster management,"Uncertainties, problematic assumptions and special features of pre-disaster models.",3,10.1016/j.sorms.2016.11.002
+62.4,Disaster management,Objective functions and decision variables for first-and second-stage of post-disaster phase.,4,10.1016/j.sorms.2016.11.002
+62.5,Disaster management,"Uncertainties, problematic assumptions and special features of post-disaster models.",5,10.1016/j.sorms.2016.11.002
+62.6,Disaster management,Solution methods for disaster management,6,10.1016/j.sorms.2016.11.002
+62.7,Disaster management,Heuristics of disaster management,7,10.1016/j.sorms.2016.11.002
+63,Population genetic algorithms,Overview of the various structured population Genetic Algorithms ,1,10.1007/s10462-012-9314-6
+64,Middle-Income Trap,Absolute definition approaches for Middle-Income Trap,2,10.1057/s41294-016- 0014-0
+64.1,Middle-Income Trap,Relative definition approaches for Middle-Income Trap,3,10.1057/s41294-016- 0014-0
+64.2,Middle-Income Trap,Overview of countries with a middle income trap,4,10.1057/s41294-016- 0014-0
+65,Face Expression Recognition,"Overview of different methods of face expression recognition 
+",1,10.1109/ICCPCT.2016.7530173
+66,Chemical process systems,Various applications of AI-based estimators in chemical process systems.,2.2,10.1016/j.eswa.2015.03.023
+67,Active Learning,Summary of characteristics of the active learning algorithms,"1,2","Settles, B. (2009). Active learning literature survey. University of Wisconsin-Madison Department of Computer Sciences."
+68,Design Patterns for Software Quality ,Overview of design pattern coverage by state of the art works,6,10.1109/ICISA.2013.6579460
+69,Contamination in retail meats,Frequency of Campylobacter spp. distribution among the isolates from retail poultry in Japan,3,10.1016/j.foodcont.2008.08.016
+70,Cytosine methylation in plants,Literature survey results for comparison of chemical and enzymatic methods suitable to discriminate between C and mC,1,10.1111/1755-0998.12426
+71,Synthetic fuels investments,Literature overview gasifiers with economic data.,1,10.1016/j.energy.2014.01.093
+71.1,Synthetic fuels investments,Literature overview FT fuel synthesis and upgrading.,2,10.1016/j.energy.2014.01.093
+71.2,Synthetic fuels investments,Relation between plant and ISBL investment costs.,3,10.1016/j.energy.2014.01.093
+71.3,Synthetic fuels investments,Biomass costs in different studies.,4,10.1016/j.energy.2014.01.093
+71.4,Synthetic fuels investments,Coal costs in different studies.,6,10.1016/j.energy.2014.01.093
+71.5,Synthetic fuels investments,Investment and production costs of synthetic fuels,7,10.1016/j.energy.2014.01.093
+72,Domain Adaptation Algorithms,"Summary of Domain Adaptation Algorithms for Natural 
+Language Processing 
+",3,"Li, Q. (2012). Literature survey: domain adaptation algorithms for natural language processing. Department of Computer Science The Graduate Center, The City University of New York, 8-10."
+73,Scheduling problems,Using Genetic Algorithms to solve scheduling problems on flexible manufacturing systems (FMS) ,3,10.1007/s10696-012-9143-6
+74,Oil,Studies on the essential oils of Artemisia herba-alba ,1,10.1016/j.arabjc.2012.04.042
+75,Over-education,Literature overview of over-education,1,"Kucel, A. (2011). Literature survey of the incidence of over-education: A sociological approach. Revista Española de Investigaciones Sociológicas (REIS), 134(1), 125-142."
+76,Vessel detection,Review of literature on vessel detection from optical satellite imagery (period 1978 – March 2017).,2,10.1016/j.rse.2017.12.033
+78,Information in Public Sector,Incentives for Disclosure of Accounting Information in Public Sector,8,"Bakar, N. B., & Saleh, Z. (2011). Incentives for disclosure of accounting information in public sector: a literature survey. International Research Journal of Finance and Economics, 75(1), 24-38."
+79,Treatment with corticosteroids,"Patient characteristics, steroid treatment and anastomotic leakage and types of surgery and anastomosis 
+","1,2",10.1111/codi.12490
+80,Skin salt interaction,Use of Zinc salts and compounds approved by the FDA for over- the-counter human use,3,10.1111/j.1468-2494.2012.00731.x
+81,Chromosome 1 abnormalities,Prevalence of chromosome 1 abnor- malities in hematologic malignancies,1,10.1111/j.1600-0609.2009.01392.x
+81.1,Chromosome 1 abnormalities,Specific types of chromosome 1 abnormalities in myeloproliferative neoplasms,3,10.1111/j.1600-0609.2009.01392.x
+82,Supply chain management,Critical success factors of supply chain management,1,DOI 10.1108/EMJB-09-2014-0028
+83,IQ stability,The survey of longitudinal studies measuring IQ values in children with autism – design of the study of treatment comparison,1,"Begovac, I., Begovac, B., Majić, G., & Vidović, V. (2009). Longitudinal studies of IQ stability in children with childhood autism–literature survey. Psychiatria Danubina, 21(3), 310-319."
+83.1,IQ stability,"The survey of longitudinal studies measuring IQ values in children with autism – design of the study of intervention application 
+",2,"Begovac, I., Begovac, B., Majić, G., & Vidović, V. (2009). Longitudinal studies of IQ stability in children with childhood autism–literature survey. Psychiatria Danubina, 21(3), 310-319."
+83.2,IQ stability, The survey of longitudinal studies measuring IQ values in children with autism – design of the study of group comparison,3,"Begovac, I., Begovac, B., Majić, G., & Vidović, V. (2009). Longitudinal studies of IQ stability in children with childhood autism–literature survey. Psychiatria Danubina, 21(3), 310-319."
+84,Neural Network Applications,Neural Network Techniques for shunt active power filter ,1,"Janpong, S., Areerak, K. L., & Areerak, K. N. (2011). A literature survey of neural network applications for shunt active power filters. Journal of World Academy of Science, Engineering and Technology, 60, 392-398."
+85,Copy number variations Calling Algorithms ,Survey of recent comparison studies of copy number variation (Copy number variations) detection.,1,10.3390/microarrays2030171
+86,Ant Colony Optimization,Literature Survey of Ant Colony Optimization in Software Testing,1,10.1109/CONSEG.2012.6349501
+87,Image Steganographic Techniques,Comparison of image Steganographic Techniques,1,"Thomas, P. (2013). Literature survey on modern image steganographic techniques. International Journal of Engineering Research and Technology, 2(5)."
+88,Salinity markers ,Habitat salinity markers of the Sr:Ca ratio in the otolith of wild diadromous fishes,1,10.1007/s10228-011-0220-8
+89,Multiple sclerosis,Oligoclonal bands predict multiple sclerosis after optic neuritis: Baseline characteristics and results,1,10.1177/1352458510391340 
+90,Genetically Modified Crops,Summary of annual social welfare impacts in million U.S. dollars,2,"Scatasta, S., Wesseler, J. H. H., & Demont, M. (2006). A critical assessment of methods for analysis of social welfare impacts of genetically modified crops: A literature survey."
+91,African monetary unions,Summary of Empirical Studies on the Proposed West African Monetary Zone,1,"10.1111/joes.12174 
+"
+91.1,African monetary unions,Summary of Empirical Studies on the Proposed East African Monetary Union,2,"10.1111/joes.12174 
+"
+91.2,African monetary unions,Summary of Empirical Studies on the Proposed Southern African Monetary Union,3,"10.1111/joes.12174 
+"
+92,Clostridium difficile infection,"Published cases of C. difficile enteritis as well as those reported here (1980–11/2009) 
+",1,10.1007/s00384-010-1001-y
+93,Electric vehicles noise,Comparison of noise for Matrix/Prius (regular passenger car) ,None,"Iversen, L. M., Marbjerg, G., & Bendtsen, H. (2013, September). Noise from electric vehicles-'State of the art'literature survey. In INTER-NOISE and NOISE-CON Congress and Conference Proceedings (Vol. 247, No. 8, pp. 267-271). Institute of Noise Control Engineering."
+94,Facial Expression Recognition,A literature survey on Facial Expression Recognition using Global Features,None,"Mistry, V. J., & Goyani, M. M. (2013). A literature survey on facial expression recognition using global features. Int. J. Eng. Adv. Technol, 2(4), 653-657."
+95,Production and cost functions ,Production function estimation for port sector,2.1,"Trujillo, L., Tovar, B., & Jara-Diaz, S. (2003). Production and cost functions and their application to the port sector: a literature survey. The World Bank."
+95.1,Production and cost functions ,Cost functions estimation for port sector,2.2,"Trujillo, L., Tovar, B., & Jara-Diaz, S. (2003). Production and cost functions and their application to the port sector: a literature survey. The World Bank."
+96,Anonymisation in social network,Overview of approaches for Anonymisation in social network,1,"Sharma, S., Gupta, P., & Bhatnagar, V. (2012). Anonymisation in social network: A literature survey and classification. International Journal of Social Network Mining, 1(1), 51-66."
+98,Data Completeness in Healthcare, Definition and measure of completeness for data completeness in healthcare,3,"Liu, C., Talaei-Khoei, A., Zowghi, D., & Daniel, J. (2017). Data completeness in healthcare: a literature survey. Pacific Asia Journal of the Association for Information Systems, 9(2)."
+98.1,Data Completeness in Healthcare,Study themes related to data completeness in healthcare,4,"Liu, C., Talaei-Khoei, A., Zowghi, D., & Daniel, J. (2017). Data completeness in healthcare: a literature survey. Pacific Asia Journal of the Association for Information Systems, 9(2)."
+99,Load Balancing Schemes in Cloud Computing,Analysis of existing approaches for Load Balancing Schemes in Cloud Computing,1,10.1109/ICGCIoT.2015.7380705
+100,Diagnostic accuracy in ophthalmolog,Overview of the key features on accuracy of diagnosic tests ,1,10.1136/bjo.2006.113290
+101,Eggshell thickness erosion,Results of studies on embryonic eggshell thickness erosion in three groups of birds representing different developmental modes,1,10.1016/j.envpol.2015.06.001
