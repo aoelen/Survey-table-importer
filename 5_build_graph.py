@@ -49,7 +49,7 @@ def main():
             research_field = 'R11'
             research_problem = table['problem']
             standard_statements = {}
-            paper_ids = []
+            contribution_ids = []
 
             df = pd.read_csv(data_dir + table_file_name, dtype=str) 
             papers = df.iloc
@@ -165,30 +165,56 @@ def main():
                         insert_paper['paper']['contributions'][0]['values']['P32'] = [
                             {"@id": research_problemId}
                         ]
+                    
+                    existingPaper = orkg.resources.get(q=insert_paper['paper']['title'], exact=True).content
+                    
+                    # If a paper already exists, add a contribution 
+                    if (len(existingPaper) > 0): 
+                        paperId = existingPaper[0]['id']
+                        paperStatements = orkg.statements.get_by_subject(subject_id=paperId).content
+                        contributionAmount = 0
 
-                    response1 = orkg.papers.add(insert_paper)
+                        for paperStatement in paperStatements:
+                            if paperStatement['predicate']['id'] == 'P31':
+                                contributionAmount += 1
 
-                    try: 
-                        if ('id' in response1.content):
-                            paper_ids.append(response1.content['id'])
-                        else:
+                        contributionId = orkg.resources.add(label="Contribution " + str(contributionAmount + 1)).content['id']
+
+                        orkg.statements.add(subject_id=paperId, predicate_id="P31", object_id=contributionId)
+                        
+                        for predicateId in insert_paper['paper']['contributions'][0]['values']:
+                            values = insert_paper['paper']['contributions'][0]['values'][predicateId]
+                            
+                            for value in values:
+                                if 'text' in value:
+                                    literalId = orkg.literals.add(label=value['text']).content['id']
+                                    orkg.statements.add(subject_id=contributionId, predicate_id=predicateId, object_id=literalId)
+                                elif '@id' in value:
+                                    orkg.statements.add(subject_id=contributionId, predicate_id=predicateId, object_id=value['@id'])
+                        
+                        contribution_ids.append(contributionId)
+                    # Paper doesn't exist yet, add a new paper 
+                    else:
+                        response1 = orkg.papers.add(insert_paper)
+
+                        try: 
+                            if ('id' in response1.content):
+                                paper_id = response1.content['id']
+                                paper_statements = orkg.statements.get_by_subject(subject_id=paper_id).content
+                                for statement in paper_statements:
+                                    if statement['predicate']['id'] == 'P31':
+                                        contribution_ids.append(statement['object']['id'])
+                            else:
+                                print(json.dumps(insert_paper))
+                                print(colored('Error, paper has not been added to ORKG', 'red'))
+                        except TypeError:
                             print(json.dumps(insert_paper))
                             print(colored('Error, paper has not been added to ORKG', 'red'))
-                    except TypeError:
-                        print(json.dumps(insert_paper))
-                        print(colored('Error, paper has not been added to ORKG', 'red'))
 
-            createComparison(table['title'], table['reference'], paper_ids, table_id)
+            createComparison(table['title'], table['reference'], contribution_ids, table_id)
 
 # Create a comparison resource in ORKG, add the title, reference and the URL 
-def createComparison(title, reference, paper_ids, table_id):
-    contribution_ids = []
-    for paper_id in paper_ids:
-        paper_statements = orkg.statements.get_by_subject(subject_id=paper_id).content
-        for statement in paper_statements:
-            if statement['predicate']['id'] == 'P31':
-                contribution_ids.append(statement['object']['id'])
-
+def createComparison(title, reference, contribution_ids, table_id):
     comparisonId = orkg.resources.add(label=title, classes=['Comparison']).content['id']
     descriptionId = orkg.literals.add(label="").content['id']
     referenceId = orkg.literals.add(label=reference).content['id']
