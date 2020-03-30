@@ -2,7 +2,7 @@
 This script automatically adds reference data to CSV files using the paper's PDF file. 
 The reference key from within the CSV file is matched against the extracted PDF reference,
 in case no extact matches are found, some heuristics are applied to look for other 
-references that could be correct (using automatic reference key generation, edit distance etc.)
+references that could be correct (using automatic reference key generation etc.)
 '''
 
 import requests
@@ -19,8 +19,9 @@ import dateutil.parser
 import os.path
 import re
 import editdistance
+import settings
 
-GROBID_URL = 'http://localhost:8070/api'
+GROBID_API = os.getenv('GROBID_API')
 vocab = dict()
 cr = Crossref()
 
@@ -57,7 +58,7 @@ def main():
                 # In case the PDF hasn't been parsed by GROBID already, do that now
                 if not os.path.exists(data_dir + 'parsedPaper-' + str(paperId) + '.xml'):
                     print('Parsing full paper with GROBID...')
-                    url = GROBID_URL + '/processFulltextDocument'
+                    url = GROBID_API + '/processFulltextDocument'
                     files = {
                         'input': open(data_dir + paperFileName, 'rb'), 
                         'includeRawCitations': 1, 
@@ -119,7 +120,7 @@ def main():
                 stats['cellsWithReferences'] += localCountRefs
                 
                 # Save the new metadata 
-                #df.to_csv(data_dir + str(paperId) + tableId + '.csv', index=False)
+                df.to_csv(data_dir + filename, index=False)
     
     print('Found paper:', str(stats['papers']))
     print('Found references:', str(stats['foundReferences']))
@@ -157,13 +158,18 @@ def processPaper(paper, references, paperId):
 
                 referenceKey = str(referenceKey) + str(year)
 
+        '''
+        # Editdistance for reference keys has been disabled because there were too many reference keys that only 
+        # differ one letter and are not the same
         # If the citation key is not found, and not numeric key, use the edit distance to find keys that are similar  
         if referenceKey not in references and not str(paper['Reference']).isdigit():
             for reference in references:
                 distance = editdistance.eval(str(referenceKey), str(reference))
-                if distance != 0 and distance <= 4:
+                
+                if distance != 0 and distance <= 2:
                     referenceKey = reference
-       
+        '''
+
        # If a matching key has been found 
         if referenceKey in references:
             title = references[referenceKey]['title']
@@ -181,11 +187,11 @@ def processPaper(paper, references, paperId):
         
             stats['foundReferences'] += 1
         # No matching key has been found, but there is a referenceRaw column present
-        elif 'referenceRaw' in paper and paper['referenceRaw'] != '' and paper['referenceRaw'] == paper['referenceRaw']:
+        elif 'referenceRaw' in paper and paper['referenceRaw'] != '' and paper['referenceRaw'] != 'none' and paper['referenceRaw'] == paper['referenceRaw']:
             # When the bibliographical data doesn't exist yet
             if 'title' not in paper or str(paper['title']) == '' or paper['title'] != paper['title']:
                 print('Parsing missing references using GROBID...')
-                url = GROBID_URL + '/processCitation'
+                url = GROBID_API + '/processCitation'
                 files = {'citations': paper['referenceRaw'], 'consolidateCitations': 1}
                 
                 r = requests.post(url, data=files)
@@ -215,7 +221,7 @@ def processPaper(paper, references, paperId):
                 author = paper['authors']
                 referenceRaw = paper['referenceRaw']
         # No reference and no raw reference has been found, ask user to manually supply it  
-        else:
+        elif paper['referenceRaw'] != 'none':
             print(colored('Reference ' + str(referenceKey) + ' not found (Paper: ' + str(paperId) + '.pdf), please add manually the raw reference...', 'yellow'))
             stats['notFoundReferences'] += 1
 
@@ -233,6 +239,8 @@ def processPaper(paper, references, paperId):
             if inputRawReference != '':
                 print('Saved!')
                 referenceRaw = inputRawReference
+        else:
+            referenceRaw = paper['referenceRaw']
     else:
         print(colored('Error: Column Reference not found!', 'red'))
 
@@ -406,6 +414,7 @@ def parseDoi(element):
 
     return doi
 
+# Generate a list of author names from the tree
 def parseAuthors(element):
     authors = element.findall('author/persName')
     paperAuthors = []
@@ -434,6 +443,8 @@ def parseAuthors(element):
     
     return paperAuthors
 
+# For automatic key generation, get the last name of the first author and 
+# optionally add _et al._ in case there are multiple authors
 def parseFirstAuthor(element):
     authors = element.findall('author/persName')
 

@@ -1,5 +1,5 @@
 '''
-This script takes the fully formatted CSV files and adds the papers from this file to the 
+This script takes the formatted CSV files and adds the papers from this file to the 
 ORKG. The scripts handles creating the triples and distinguishes between resources/literals. 
 Additionally, a comparison object is created, so each survey can be viewed directly from the ORKG 
 user interface.
@@ -16,10 +16,11 @@ import string
 import argparse
 from termcolor import colored
 import re
-import os.path
+import os
+import settings
 
-ORKG_API = 'http://0313cbb4.ngrok.io'
-orkg = ORKG(ORKG_API) #https://www.orkg.org/orkg
+# Init ORKG with credentials from env file 
+orkg = settings.init_orkg() 
 vocab = dict()
 cr = Crossref()
 
@@ -43,7 +44,7 @@ def main():
 
         # If a corresponding table CSV file exists
         if os.path.exists(data_dir + table_file_name):
-            print('Loading CSV file...' + data_dir + table_file_name)
+            #print('Loading CSV file...' + data_dir + table_file_name)
 
             research_field = 'R11'
             research_problem = table['problem']
@@ -56,7 +57,6 @@ def main():
             # For each paper in the table CSV
             for paper in papers:
                 insert_paper = {}
-                #print('Inserting:' + str(paper['title']))
 
                 if paper['title'] and paper['title'] != '' and paper['title'] == paper['title']:
                     insert_paper['paper'] = {}
@@ -70,10 +70,10 @@ def main():
                             insert_paper['paper']['authors'].append({"label": author})
 
                     if paper['publicationMonth'] == paper['publicationMonth']: # Exclude NaN values 
-                        insert_paper['paper']['publicationMonth'] = paper['publicationMonth']
+                        insert_paper['paper']['publicationMonth'] = int(float(paper['publicationMonth']))
                     
                     if paper['publicationYear'] == paper['publicationYear']: # Exclude NaN values 
-                        insert_paper['paper']['publicationYear'] = paper['publicationYear']
+                        insert_paper['paper']['publicationYear'] = int(float(paper['publicationYear']))
 
                     if paper['doi'] == paper['doi']:  # Exclude NaN values 
                         insert_paper['paper']['doi'] = paper['doi']
@@ -89,9 +89,10 @@ def main():
                     if 'referenceRaw' in paper:
                         del paper['referenceRaw']
 
-                    statements = {}
+                    if 'ReferenceRaw' in paper:
+                        del paper['ReferenceRaw']
 
-                    #print('Lookup predicates and resources...')
+                    statements = {}
 
                     for item in paper.iteritems(): 
                         predicate = item[0].rstrip(string.digits) # Column, remove digits that are used to make columns unique by OpenRefine
@@ -165,51 +166,84 @@ def main():
                             {"@id": research_problemId}
                         ]
 
-                    #print(json.dumps(insert_paper))
                     response1 = orkg.papers.add(insert_paper)
 
-                    if ('id' in response1.content):
-                        #print(response1.content['id'])
-                        paper_ids.append(response1.content['id'])
-                    else:
+                    try: 
+                        if ('id' in response1.content):
+                            paper_ids.append(response1.content['id'])
+                        else:
+                            print(json.dumps(insert_paper))
+                            print(colored('Error, paper has not been added to ORKG', 'red'))
+                    except TypeError:
+                        print(json.dumps(insert_paper))
                         print(colored('Error, paper has not been added to ORKG', 'red'))
-                else:
-                    print(colored('Skipping paper without a title', 'yellow'))
 
-            createComparison(table['title'], table['reference'], paper_ids)
-
-            print('Finished: done inserting all papers')
+            createComparison(table['title'], table['reference'], paper_ids, table_id)
 
 # Create a comparison resource in ORKG, add the title, reference and the URL 
-def createComparison(title, reference, paper_ids):
+def createComparison(title, reference, paper_ids, table_id):
+    contribution_ids = []
+    for paper_id in paper_ids:
+        paper_statements = orkg.statements.get_by_subject(subject_id=paper_id).content
+        for statement in paper_statements:
+            if statement['predicate']['id'] == 'P31':
+                contribution_ids.append(statement['object']['id'])
+
     comparisonId = orkg.resources.add(label=title, classes=['Comparison']).content['id']
-    #descriptionId = orkg.literals.add(label=description).content['id']
+    descriptionId = orkg.literals.add(label="").content['id']
     referenceId = orkg.literals.add(label=reference).content['id']
-    paper_ids = ",".join(paper_ids)
-    urlId = orkg.literals.add(label="?contributions=" + paper_ids).content['id']
+    contribution_ids = ",".join(contribution_ids)
+    urlId = orkg.literals.add(label="?contributions=" + contribution_ids).content['id']
     
-    #orkg.statements.add(subject_id=comparisonId, predicate_id="description", object_id=descriptionId).content['id']
+    orkg.statements.add(subject_id=comparisonId, predicate_id="description", object_id=descriptionId).content['id']
     orkg.statements.add(subject_id=comparisonId, predicate_id="url", object_id=urlId).content['id']
     orkg.statements.add(subject_id=comparisonId, predicate_id="reference", object_id=referenceId).content['id']
 
-    print('comparisonId', comparisonId)
+    print(table_id + ' ', '/comparison/' + comparisonId)
+
+lookedUpResources = {}
 
 # Loopup resource by label, create if it doesn't exist
 def createOrFindResource(label):
+    label = label.strip()
+
+    if label in lookedUpResources:
+        return lookedUpResources[label]
+
     findResource = orkg.resources.get(q=label, exact=True).content
-    if (len(findResource) > 0):
-        resource = findResource[0]['id']
-    else:
+    try:
+        if (len(findResource) > 0):
+            resource = findResource[0]['id']
+        else:
+            resource = orkg.resources.add(label=label).content['id']
+    except:
+        print(label)
         resource = orkg.resources.add(label=label).content['id']
+
+    lookedUpResources[label] = resource
+
     return resource
+
+lookedUpPredicates = {}
 
 # Loopup predicate by label, create if it doesn't exist
 def createOrFindPredicate(label):
+    label = label.strip()
+    
+    if label in lookedUpPredicates:
+        return lookedUpPredicates[label]
+
     findPredicate = orkg.predicates.get(q=label, exact=True).content
-    if (len(findPredicate) > 0):
-        predicate = findPredicate[0]['id']
-    else:
+    try:
+        if (len(findPredicate) > 0):
+            predicate = findPredicate[0]['id']
+        else:
+            predicate = orkg.predicates.add(label=label).content['id']
+    except:
         predicate = orkg.predicates.add(label=label).content['id']
+
+    lookedUpPredicates[label] = predicate
+
     return predicate
 
 if __name__ == "__main__":

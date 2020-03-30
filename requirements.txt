@@ -10,6 +10,7 @@ numpy==1.18.2
 orkg==0.4.2
 pandas==1.0.2
 python-dateutil==2.8.1
+python-dotenv==0.12.0
 pytz==2019.3
 requests==2.23.0
 six==1.14.0
