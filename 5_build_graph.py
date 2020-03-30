@@ -178,7 +178,7 @@ def main():
                             if paperStatement['predicate']['id'] == 'P31':
                                 contributionAmount += 1
 
-                        contributionId = orkg.resources.add(label="Contribution " + str(contributionAmount + 1)).content['id']
+                        contributionId = orkg.resources.add(label="Contribution " + str(contributionAmount + 1), classes=['Contribution']).content['id']
 
                         orkg.statements.add(subject_id=paperId, predicate_id="P31", object_id=contributionId)
                         
