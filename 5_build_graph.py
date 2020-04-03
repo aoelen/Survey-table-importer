@@ -64,6 +64,8 @@ def main():
                     insert_paper['paper']['authors'] = []
                     insert_paper['paper']['publicationYear'] = ''
                     insert_paper['paper']['publicationMonth'] = ''
+                    insert_paper['paper']['url'] = ''
+                    insert_paper['paper']['publishedIn'] = ''
 
                     if paper['authors'] == paper['authors']: # Exclude NaN values 
                         for author in paper['authors'].split(','):
@@ -79,12 +81,16 @@ def main():
                         insert_paper['paper']['doi'] = paper['doi']
                     
                     # Delete the metadata from the triples that will be inserted (metadata is already added when adding a paper)
-                    del paper['Reference']
+                    # Required metadata
                     del paper['title']
                     del paper['authors']
                     del paper['publicationMonth']
                     del paper['publicationYear']
                     del paper['doi']
+
+                    # Optional metadata
+                    if 'Reference' in paper:
+                        del paper['Reference']
 
                     if 'referenceRaw' in paper:
                         del paper['referenceRaw']
@@ -107,7 +113,7 @@ def main():
 
                         if (value != value): # Don't insert NaN values
                             continue
-                            
+
                         predicateId = createOrFindPredicate(predicate)
                         
                         # Choose between adding a literal v.s. a resource
