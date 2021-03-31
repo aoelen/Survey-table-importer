@@ -5,7 +5,7 @@ editdistance==0.5.3
 habanero==0.7.2
 hammock==0.2.4
 idna==2.9
-lxml==4.5.0
+lxml==4.6.3
 numpy==1.18.2
 orkg==0.4.2
 pandas==1.0.2
