@@ -18,4 +18,4 @@ soupsieve==2.0
 tei-reader==0.0.17
 termcolor==1.1.0
 tqdm==4.43.0
-urllib3==1.25.8
+urllib3==1.26.5
