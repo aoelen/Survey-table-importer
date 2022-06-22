@@ -6,7 +6,7 @@ habanero==0.7.2
 hammock==0.2.4
 idna==2.9
 lxml==4.5.0
-numpy==1.18.2
+numpy==1.22.0
 orkg==0.4.2
 pandas==1.0.2
 python-dateutil==2.8.1
